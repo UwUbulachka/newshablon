@@ -38,9 +38,14 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params[:color]
 
+# Создание доп сущности
 	c = Client.new
 	c.name = @username
 	c.phone = @phone
+	c.datestamp = @datetime
+	c.barber = @barber
+	c.color = @color 
+	c.save
 
 	erb "<h2>Спасибо, вы записались!</h2>"
 
