@@ -6,7 +6,11 @@ require "sinatra/activerecord"
 
 set :database, "sqlite3:barbershop.db"
 
-class Client < ActiveRecord::Base # создание сущности
+class Client < ActiveRecord::Base # создание сущности модель
+	validates :name, presence: true #validates название метода перпвый символ для проверки
+	validates :phone, presence: true 
+	validates :datestamp, presence: true 
+	validates :color, presence: true 
 
 end
 
